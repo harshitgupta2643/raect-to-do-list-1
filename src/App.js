@@ -1,11 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './Component/Header';
+import React , {useState} from 'react';
+import Login from './Component/Login';
 
 function App() {
+  const [currentForm, setCurrentForm] = useState('login');
+  const toggleForm = (formName)=>{
+    setCurrentForm(formName);
+  }
   return (
-    <div className="App">
-      <Header/>
+    <div>
+      {currentForm == 'login' && <Login onFormSwitch={toggleForm} />}
+      {/* {currentForm == 'register' && <Register onFormSwitch={toggleForm} />} */}
+      {currentForm == 'to-do-list' && <div className="App">
+        <Header />
+      </div>}
     </div>
   );
 }
