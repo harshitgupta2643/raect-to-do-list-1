@@ -6,8 +6,10 @@ const Login = (props) => {
     const [error,setError] = useState(null);
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         if(email.includes('@gmail.com') && pass.length >= 8){
             setError(null);
+            console.log('Login Successful');
             props.onFormSwitch('to-do-list');
         }
         else{
