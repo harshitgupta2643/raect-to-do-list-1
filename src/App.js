@@ -28,9 +28,9 @@ function App() {
     setToDoList(filtered);
   }
 
-  const addTask = (userInput ,dueDate) => {
+  const addTask = (userInput) => {
     let copy = [...toDoList];
-    copy = [...copy, { id: toDoList.length + 1, task: userInput , complete:false,dueDate :dueDate}];
+    copy = [...copy, { id: toDoList.length + 1, task: userInput , complete:false}];
     setToDoList(copy);
   }
 
