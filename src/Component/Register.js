@@ -34,7 +34,7 @@ const Register = (props) => {
                 <label htmlFor='password'>Password</label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type ='password' id='password' placeholder='********' name='password' />
                 {error && <div className='error-message'>{error}</div>}
-                <button className='link-btn' type='submit'>Register</button>
+                <button className='link-btn' type='submit'  onClick={() => props.onFormSwitch('to-do-list')}>Register</button>
             </form>
             <button className='link-btn' onClick={() => props.onFormSwitch('login')}>Already have an Account? Login Here</button>
         </div>
